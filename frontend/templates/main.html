@@ -1,0 +1,8 @@
+<div class="projects" ng-controller="projectsCtrl">
+	<section ng-repeat="project in list" ng-controller="projectCtrl" ng-include="'project.html'"></section>
+
+	<div class="create-project">
+		<a href ng-click="createProject()" class="btn btn-primary">Add Project</a>
+		<a href ng-click="signOut()" class="btn btn-default">Log out</a>
+	</div>
+</div>

@@ -1,0 +1,202 @@
+.projects {
+	section {
+		width: 700px;
+		margin: 40px auto;
+
+		.head {
+
+			.title {
+				padding: 10px 15px;
+				background: #5080bc;
+				color: #fff;
+				font-size: 17px;
+
+				input {
+					color: #a1a1a1;
+				}
+
+				.icon {
+					color: #3e4f6b;
+				}
+			}
+
+			.controls {
+				display: inline-block;
+				float: right;
+				position: relative;
+				// visibility: hidden;
+				opacity: 0.4;
+
+				>a {
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+
+		&:hover {
+			.head {
+				.controls {
+					// visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+
+		.create-task {
+			background: #dfdfdf;
+			border: #aaaaaa 1px solid;
+			border-top: none;
+			padding: 7px 15px;
+
+			.icon {
+				color: #589072;
+				font-size: 25px;
+				vertical-align: top;
+				margin-top: 2px;
+			}
+
+			.input-wrap {
+				width: 637px;
+				position:relative;
+				display: inline-block;
+
+				input {
+					width: 525px;
+					padding: 5px 15px;
+					margin: 0 0 0 5px;
+					border: 1px solid transparent;
+					outline: none;
+				}
+
+				a.add {
+					position: absolute;
+					right: 0;
+					top:0;
+					background: #91c8ab;
+					border: 1px solid #447557;
+					text-decoration: none;
+					color: #fff;
+					text-align: center;
+					padding: 5px 25px;
+					border-top-right-radius: 3px;
+					border-bottom-right-radius: 3px;
+				}
+			}
+		}
+
+		.tasks {
+			background: #fff;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			border: 1px solid #aaa;
+			border-top: none;
+			border-bottom-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+
+			li {
+				@taskPaddings: 10px 12px 10px 21px;
+
+				border-bottom: 1px solid #e7ebea;
+				position: relative;
+
+				.status {
+					position: absolute;
+					height: 100%;
+					border-right: 1px solid #efdadf;
+					padding: 0 47px 0 0;
+
+					> input[type="checkbox"] {
+						position: absolute;
+						top: 50%;
+						margin-top: -6px;
+						left: 20px;
+					}
+				}
+
+				.text {
+					padding: @taskPaddings;
+					border-left: 1px solid #efdadf;
+					border-right: 1px solid #e7ebea;
+					margin: 0 0 0 55px;
+					float: left;
+					width: 521px;
+					color: #999999;
+
+					&.cross {
+						text-decoration: line-through;
+						color: #cfcfcf;
+					}
+				}
+
+				.control {
+					padding: 10px 0;
+					width: 126px;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					margin-top: -20px;
+
+					> span {
+						margin: 0 3px;
+						color: #999999;
+						// visibility: hidden;
+						opacity: 0.4;
+						cursor: pointer;
+
+						&.move {
+							cursor: move;
+						}
+
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+
+				&:hover {
+					background: #fcfed5;
+
+					.control {
+						> span {
+							// visibility: visible;
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			li:last-child {
+				border-bottom: none;
+				border-bottom-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+			}
+		}
+	}
+
+	.popover {
+		&.edit-popover {
+			display: block;
+			left: 50%;
+			top: -66px;
+			margin: 0 0 0 -102px;
+			.error {
+				color: #FD5C5C;
+			}
+		}
+
+		&.calendar {
+			display: block;
+			max-width: inherit;
+			left: 50%;
+			margin-left: -169px;
+			top: -334px;
+		}
+	}
+
+	.create-project {
+		text-align: center;
+		margin: 35px 0;
+	}
+}

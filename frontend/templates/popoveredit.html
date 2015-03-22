@@ -1,0 +1,12 @@
+<div class="popover top edit-popover">
+	<div class="arrow"></div>
+
+	<div class="popover-inner">
+		<form name="popoverEditForm" class="popover-content form-inline">
+			<div class="form-group" ng-class="{ 'has-error' :  popoverEditForm.data.$invalid }">
+				<input type="text" ng-model="data" required name="data" class="form-control"/>
+				<div ng-show="popoverEditForm.data.$error.required" class="error text-center">Name is required</div>
+			</div>
+		</form>
+	</div>
+</div>

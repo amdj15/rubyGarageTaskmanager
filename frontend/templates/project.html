@@ -1,0 +1,35 @@
+<div class="head">
+	<div class="title">
+		<span class="text">
+			<span class="glyphicon glyphicon-calendar icon"></span> {{ project.name }}
+		</span>
+
+		<div class="controls">
+			<a href class="edit glyphicon glyphicon-pencil" pop-over-edit="project.name" pop-over-change="editProjectName()"></a>
+			<a href class="remove glyphicon glyphicon-trash" ng-click="delete()"></a>
+		</div>
+	</div>
+</div>
+
+<div class="create-task">
+	<span class="icon glyphicon glyphicon-plus"></span>
+	<div class="input-wrap">
+		<input placeholder="Start typing here to create task..." type="text" ng-model="newTask.val" />
+		<a class="add" ng-click="newTask.save()" href>Add task</a>
+	</div>
+</div>
+
+<ul class="tasks" ui-sortable="sortOptions" ng-model="tasks">
+	<li ng-repeat="task in tasks" class="clearfix">
+		<div class="status">
+			<input type="checkbox" ng-change="saveTask(task)" ng-model="task.complete" ng-true-value="1" ng-false-value="0" />
+		</div>
+		<div class="text" ng-class="{ cross : task.complete }">{{ task.text }}</div>
+		<div class="control text-center">
+			<span class="move glyphicon glyphicon-menu-hamburger"></span>
+			<span class="glyphicon glyphicon-calendar icon" pop-over-datepicker="task.deadline" pop-over-datepicker-change="saveTask(task, true)" format="yyyy-MM-dd"></span>
+			<span class="glyphicon glyphicon-pencil" pop-over-edit="task.text" pop-over-change="saveTask(task, true)"></span>
+			<span class="glyphicon glyphicon-trash" ng-click="deleteTask(task)"></span>
+		</div>
+	</li>
+</ul>

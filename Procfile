@@ -1,0 +1,1 @@
+web: sh -c 'cd ./app/ && node bin/www'
