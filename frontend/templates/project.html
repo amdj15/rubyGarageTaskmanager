@@ -13,10 +13,11 @@
 
 <div class="create-task">
 	<span class="icon glyphicon glyphicon-plus"></span>
-	<div class="input-wrap">
-		<input placeholder="Start typing here to create task..." type="text" ng-model="newTask.val" />
-		<a class="add" ng-click="newTask.save()" href>Add task</a>
-	</div>
+	<form name="newTaskForm" class="input-wrap" ng-submit="newTask.save(newTaskForm)">
+
+		<input required name="newtask" placeholder="Start typing here to create task..." type="text" ng-model="newTask.val" />
+		<button class="add">Add task</button>
+	</form>
 </div>
 
 <ul class="tasks" ui-sortable="sortOptions" ng-model="tasks">

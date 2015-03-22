@@ -1,6 +1,10 @@
 (function(window, app, undefined){
 	function projectCtrl ($scope, projects, task, $timeout, $filter) {
 		$scope.delete = function() {
+			if (!confirm('Are you sure?')) {
+				return;
+			}
+
 			// remove
 			$scope.project.$delete(function(){
 				$scope.list.splice($scope.list.indexOf($scope.project), 1);
@@ -19,8 +23,8 @@
 
 		$scope.newTask = {
 			val: '',
-			save: function() {
-				if (!this.val.length) {
+			save: function(form) {
+				if (form.$invalid) {
 					return alert('Enter task text');
 				}
 
@@ -41,6 +45,10 @@
 		};
 
 		$scope.deleteTask = function(task) {
+			if (!confirm('Are you sure?')) {
+				return;
+			}
+
 			task.$delete(function(){
 				$scope.tasks.splice($scope.tasks.indexOf(task), 1);
 			});

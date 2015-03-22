@@ -49,7 +49,7 @@
 				scope.date =  angular.copy(scope.initialDate);
 
 				scope.date = new Date(scope.date);
-				if (scope.date == "Invalid Date") {
+				if (scope.date == "Invalid Date" || scope.date.valueOf() === 0) {
 					scope.date = null;
 				}
 

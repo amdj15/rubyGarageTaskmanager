@@ -44,7 +44,7 @@ gulp.task('jsvendors', function(){
 	.pipe(plumber({
 		errorHandler: errorHandler
 	}))
-	// .pipe(uglify())
+	.pipe(uglify())
 	.pipe(concat('vendors.min.js'))
 	.pipe(gulp.dest('public/js'));
 });
@@ -58,7 +58,7 @@ gulp.task('buildjs', function(){
 	).pipe(plumber({
 		errorHandler: errorHandler
 	}))
-	//.pipe(uglify())
+	.pipe(uglify())
 	.pipe(concat('common.min.js'))
 	.pipe(gulp.dest('public/js'));
 });
